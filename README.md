@@ -186,6 +186,21 @@ Claude Code Mobile Studio is a **configuration layer** for Claude Code — a col
 6. RELEASE    /setup-cicd → /build → /publish-appstore / /publish-playstore
 ```
 
+## Guided Workflow (Orchestration Layer)
+
+The studio is designed to feel like a guided game — you're never left staring at a blank prompt wondering what to run next.
+
+- **Handoff menus** — every skill ends with a numbered "what's next?" block so you can pick the next step by number or stay and chat.
+- **MVP anchor** — `/start` and `/brainstorm` write a one-line MVP to `.claude/session/mvp.md`. It shows up in every skill's Status block so the north star is always visible.
+- **Session breadcrumbs** — each skill appends a timestamped line to `.claude/session/active.md`, giving you a running log of what's been done.
+- **SessionStart hook** — every time you open Claude Code in this directory, the hook surfaces your MVP, review mode, and the last 40 lines of breadcrumbs so context is never lost.
+- **Review gates** — pick a mode during `/start`:
+  - `solo` — no gates, move fast
+  - `lean` — directors review at phase boundaries (architecture, build, publish)
+  - `full` — directors review after every meaningful skill
+
+At phase-boundary skills, the designated director (mobile-architect, tech-lead, or product-owner) is auto-spawned to review before the handoff. See `.claude/docs/review-gates.md` for the full trigger matrix.
+
 ## Examples
 
 ### Start a new React Native app
@@ -226,12 +241,19 @@ This orchestrates multiple agents to design, build, test, and review the feature
 │   ├── create-screen/SKILL.md
 │   ├── setup-auth/SKILL.md
 │   ├── ...and 39 more
-├── hooks/                # Validation hooks
+├── hooks/                # Validation + session hooks
 │   ├── validate-commit.sh
-│   └── validate-mobile-assets.sh
+│   ├── validate-mobile-assets.sh
+│   └── session-start.sh   # Surfaces MVP + breadcrumbs on load
 ├── docs/                 # Studio documentation
 │   ├── agent-roster.md
-│   └── quick-start.md
+│   ├── quick-start.md
+│   ├── handoff-template.md  # Canonical end-of-skill format
+│   └── review-gates.md      # Trigger matrix for director reviews
+├── session/              # Runtime state (auto-managed)
+│   ├── mvp.md             # One-line MVP anchor
+│   ├── active.md          # Timestamped breadcrumbs
+│   └── review-mode.txt    # solo / lean / full
 └── settings.json         # Permissions and hook config
 CLAUDE.md                 # Studio configuration
 README.md                 # This file
