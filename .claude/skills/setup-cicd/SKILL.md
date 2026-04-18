@@ -56,7 +56,17 @@ When this skill is invoked:
    Push → Lint → Test → Build → Beta (TestFlight/Internal Track) → Production
    ```
 
-6. **Suggest next steps**:
-   1. "Run `/build` to test the build locally"
-   2. "Run `/publish-appstore` or `/publish-playstore` to configure store submission"
-   3. "Talk to `@devops-lead` for advanced CI/CD patterns"
+6. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /setup-cicd — [YYYY-MM-DD HH:MM]
+     - Action: wired [provider] pipeline with [stages]
+     - Recommended next: /build
+     ```
+   - Render the handoff block with:
+     - `/build` — validate the pipeline with a local build *(recommended)*
+     - `/publish-appstore` — configure TestFlight submission from CI
+     - `/publish-playstore` — configure internal track submission from CI
+     - `/setup-codepush` — add OTA publishing to the pipeline
+     - `@devops-lead` — branch strategy, release channels, secrets management

@@ -59,7 +59,17 @@ When this skill is invoked:
 
 5. **Write files** to appropriate navigation directories.
 
-6. **Suggest next steps**:
-   1. "Run `/create-screen <name>` to add screens to the navigation"
-   2. "Run `/setup-deep-linking` for advanced deep link configuration"
-   3. "Talk to `@rn-navigation-specialist` for navigation questions"
+6. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /setup-navigation — [YYYY-MM-DD HH:MM]
+     - Action: configured [pattern] navigation with [N] tabs
+     - Recommended next: /create-screen
+     ```
+   - Render the handoff block with:
+     - `/create-screen [name]` — build the first screen in the nav tree *(recommended)*
+     - `/setup-theme` — lock design system before building screens
+     - `/setup-deep-linking` — deep configuration of links (URL schemes, universal links)
+     - `/setup-auth` — implement the auth flow this nav gates
+     - `@ux-lead` — review navigation UX

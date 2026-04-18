@@ -3,7 +3,7 @@ name: audit-performance
 description: "Audit mobile app performance: startup time, FPS, memory usage, bundle size, battery impact, and rendering efficiency."
 argument-hint: "[area: startup|rendering|memory|bundle|battery|all]"
 user-invocable: true
-allowed-tools: Read, Glob, Grep, Bash, Write, AskUserQuestion
+allowed-tools: Read, Glob, Grep, Bash, Write, AskUserQuestion, Task
 ---
 
 When this skill is invoked:
@@ -65,6 +65,17 @@ When this skill is invoked:
 
 5. **Output report** to stdout.
 
-6. **Suggest next steps**:
-   1. "Talk to `@performance-engineer` for optimization help"
-   2. "Run `/build` to check actual bundle sizes"
+6. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /audit-performance — [YYYY-MM-DD HH:MM]
+     - Action: audited [area] — [N] issues flagged
+     - Recommended next: fix findings then /build
+     ```
+   - Render the handoff block with:
+     - `/build` — verify bundle sizes and release-mode perf *(recommended)*
+     - `/code-review` — review perf fixes applied
+     - `/test-devices` — profile on low-end devices from the matrix
+     - `/setup-crash-reporting` — add perf monitoring for production
+     - `@performance-engineer` — deep optimization of hotspots

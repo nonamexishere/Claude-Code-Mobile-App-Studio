@@ -61,6 +61,17 @@ When this skill is invoked:
    - Fix code examples
    - Testing instructions (VoiceOver/TalkBack manual testing steps)
 
-5. **Suggest next steps**:
-   1. "Talk to `@accessibility-specialist` for remediation"
-   2. "Run manual testing with VoiceOver (iOS) or TalkBack (Android)"
+5. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /audit-accessibility — [YYYY-MM-DD HH:MM]
+     - Action: audited [scope] — found [N] issues at WCAG [level]
+     - Recommended next: fix findings then /code-review
+     ```
+   - Render the handoff block with:
+     - `/code-review` — review the fixes applied for findings *(recommended)*
+     - `/setup-theme` — refine contrast and dynamic type tokens
+     - `/test-devices` — verify with assistive tech on real devices
+     - `/write-tests` — add accessibility regression tests
+     - `@accessibility-specialist` — deep remediation and WCAG AA sign-off

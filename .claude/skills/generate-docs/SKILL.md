@@ -47,5 +47,17 @@ When this skill is invoked:
 
 4. **Write files** to `docs/`.
 
-5. **Suggest next steps**:
-   1. "Run `/create-readme` for the project README"
+5. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /generate-docs — [YYYY-MM-DD HH:MM]
+     - Action: generated [type] documentation under docs/
+     - Recommended next: /create-readme
+     ```
+   - Render the handoff block with:
+     - `/create-readme` — write the top-level project README *(recommended)*
+     - `/create-changelog` — start a changelog alongside docs
+     - `/code-review` — verify docs match current code
+     - `/sprint-plan` — fold doc gaps into upcoming work
+     - `@tech-writer` — polish tone and structure

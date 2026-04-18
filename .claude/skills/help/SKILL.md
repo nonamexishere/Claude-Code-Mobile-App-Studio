@@ -63,3 +63,15 @@ When this skill is invoked:
    - If screens exist but no tests: suggest `/write-tests`
    - If tests exist but no CI: suggest `/setup-cicd`
    - Provide a "You can continue with..." recommendation based on current state.
+
+7. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Do NOT append a breadcrumb for `/help` (it's a read-only skill).
+   - Render the handoff block with state-based recommendations:
+     - `/start` — if no project yet *(recommended when empty)*
+     - `/brainstorm` — if no idea yet
+     - `/create-screen` — if architecture exists but no screens
+     - `/write-tests` — if screens exist but no tests
+     - `/setup-cicd` — if tests exist but no CI
+     - `/sprint-plan` — to pick the next task
+     - `@mobile-architect` — discuss direction

@@ -49,7 +49,17 @@ When this skill is invoked:
    - Public read, authenticated write
    - Role-based access
 
-6. **Suggest next steps**:
-   1. "Run `/setup-auth` to build complete auth flows"
-   2. "Run `/design-database` to design your schema"
-   3. "Talk to `@supabase-specialist` for advanced patterns"
+6. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /setup-supabase — [YYYY-MM-DD HH:MM]
+     - Action: wired Supabase [services] with RLS templates
+     - Recommended next: /setup-auth
+     ```
+   - Render the handoff block with:
+     - `/setup-auth` — build login/signup flows on top of Supabase Auth *(recommended)*
+     - `/design-database` — design schema and refine Row Level Security
+     - `/create-model` — generate typed models from Supabase tables
+     - `/setup-offline` — add local cache + sync for Supabase data
+     - `@supabase-specialist` — realtime, edge functions, and scaling

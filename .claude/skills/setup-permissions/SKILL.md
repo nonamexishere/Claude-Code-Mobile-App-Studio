@@ -39,6 +39,17 @@ When this skill is invoked:
 
 4. **Generate files** in `src/permissions/` or equivalent.
 
-5. **Suggest next steps**:
-   1. "Talk to `@permissions-specialist` for complex permission flows"
-   2. "Run `/audit-security` to verify privacy compliance"
+5. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /setup-permissions — [YYYY-MM-DD HH:MM]
+     - Action: added runtime permissions for [types] with [UX strategy]
+     - Recommended next: /audit-security
+     ```
+   - Render the handoff block with:
+     - `/audit-security` — verify privacy compliance and data handling *(recommended)*
+     - `/setup-push-notifications` — if notifications permission was requested
+     - `/audit-accessibility` — ensure pre-permission screens are accessible
+     - `/write-tests` — cover granted/denied/restricted flows
+     - `@permissions-specialist` — complex permission flows and edge cases

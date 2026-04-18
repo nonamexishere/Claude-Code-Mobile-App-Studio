@@ -57,7 +57,17 @@ When this skill is invoked:
 
 6. **Run tests** and report results.
 
-7. **Suggest next steps**:
-   1. "Run `/audit-performance` to check for performance issues"
-   2. "Run `/test-devices` to plan device testing matrix"
-   3. "Talk to `@test-engineer` for advanced testing patterns"
+7. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /write-tests — [YYYY-MM-DD HH:MM]
+     - Action: added [level] tests for [target]
+     - Recommended next: /code-review
+     ```
+   - Render the handoff block with:
+     - `/code-review [target]` — review the code you just covered *(recommended)*
+     - `/test-devices` — plan device testing matrix
+     - `/audit-performance` — check perf regressions surfaced by tests
+     - `/sprint-plan` — pick the next task now that this is green
+     - `@qa-lead` — discuss test strategy and coverage gaps

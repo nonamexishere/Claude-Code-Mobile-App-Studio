@@ -52,6 +52,17 @@ When this skill is invoked:
    - scheduleLocal()
    - subscribeTopic() / unsubscribeTopic()
 
-5. **Suggest next steps**:
-   1. "Run `/setup-deep-linking` to handle notification deep links"
-   2. "Talk to `@push-notification-specialist` for advanced patterns"
+5. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /setup-push-notifications — [YYYY-MM-DD HH:MM]
+     - Action: wired push notifications with [provider]
+     - Recommended next: /setup-deep-linking
+     ```
+   - Render the handoff block with:
+     - `/setup-deep-linking` — route taps from notifications to the right screen *(recommended)*
+     - `/setup-permissions` — refine the permission prompt UX
+     - `/setup-analytics` — track notification open rates
+     - `/write-tests` — cover notification handlers
+     - `@push-notification-specialist` — advanced targeting and scheduling

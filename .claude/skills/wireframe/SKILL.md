@@ -61,7 +61,17 @@ When this skill is invoked:
 
 6. **Write output** to `design/wireframes/<screen-name>.md` or `design/wireframes/all-screens.md`.
 
-7. **Suggest next steps**:
-   1. "Run `/setup-navigation` to implement this navigation structure"
-   2. "Run `/create-screen <name>` to build a wireframed screen"
-   3. "Talk to `@ux-lead` for UX review of the wireframes"
+7. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /wireframe — [YYYY-MM-DD HH:MM]
+     - Action: wireframed [N] screens + nav flow
+     - Recommended next: /setup-navigation
+     ```
+   - Render the handoff block with:
+     - `/setup-navigation` — implement the navigation flow you just sketched *(recommended)*
+     - `/create-screen [name]` — build one of the wireframed screens
+     - `/setup-theme` — lock colors/typography before building screens
+     - `@ux-lead` — UX review of the wireframes
+     - `@mobile-architect` — sanity-check the flow against architecture

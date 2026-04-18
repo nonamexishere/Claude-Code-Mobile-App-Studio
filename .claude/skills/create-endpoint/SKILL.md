@@ -52,6 +52,17 @@ When this skill is invoked:
    - Offline queue support (if applicable)
    - Test file with mock responses
 
-6. **Suggest next steps**:
-   1. "Run `/create-model` to generate data models for this endpoint"
-   2. "Run `/setup-offline` to add offline support for this endpoint"
+6. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /create-endpoint — [YYYY-MM-DD HH:MM]
+     - Action: implemented [METHOD path] with [cache strategy]
+     - Recommended next: /create-model
+     ```
+   - Render the handoff block with:
+     - `/create-model` — generate models for request/response types *(recommended)*
+     - `/setup-offline` — add offline queue for this endpoint
+     - `/write-tests` — cover success/error/retry paths
+     - `/create-screen` — build a screen consuming this endpoint
+     - `@api-developer` — review contract fit and error mapping

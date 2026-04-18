@@ -47,6 +47,17 @@ When this skill is invoked:
    - Rollback on failure
    - Analytics for update adoption rate
 
-5. **Suggest next steps**:
-   1. "Run `/setup-cicd` to automate OTA deployments"
-   2. "Talk to `@devops-lead` for release strategy"
+5. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /setup-codepush — [YYYY-MM-DD HH:MM]
+     - Action: wired [provider] OTA updates with [strategy]
+     - Recommended next: /setup-cicd
+     ```
+   - Render the handoff block with:
+     - `/setup-cicd` — automate OTA publishing from CI *(recommended)*
+     - `/setup-analytics` — track update adoption and rollback rates
+     - `/setup-crash-reporting` — auto-rollback on crash spikes
+     - `/build` — validate release bundle produces a valid patch
+     - `@devops-lead` — release channels and rollout strategy

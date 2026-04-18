@@ -43,7 +43,17 @@ When this skill is invoked:
 
 5. **Register the screen** in navigation if navigation is already set up.
 
-6. **Suggest next steps**:
-   1. "Run `/create-component <name>` for reusable parts of this screen"
-   2. "Run `/write-tests` to add comprehensive tests"
-   3. "Run `/add-animation` to add transitions or micro-interactions"
+6. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /create-screen — [YYYY-MM-DD HH:MM]
+     - Action: scaffolded [ScreenName] with loading/error/empty states
+     - Recommended next: /create-component
+     ```
+   - Render the handoff block with:
+     - `/create-component [name]` — build reusable parts of this screen *(recommended)*
+     - `/write-tests` — cover the view model and screen states
+     - `/add-animation` — polish with transitions or micro-interactions
+     - `/code-review src/screens/[ScreenName]` — review before moving on
+     - `@ux-lead` — review visual and interaction design

@@ -40,7 +40,17 @@ When this skill is invoked:
    - Storybook / widget catalog entry (if applicable)
    - Test file with variant coverage
 
-6. **Suggest next steps**:
-   1. "Use this component in a screen with `/create-screen`"
-   2. "Run `/setup-theme` to ensure consistent theming"
-   3. "Talk to `@ui-developer` for design system questions"
+6. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /create-component — [YYYY-MM-DD HH:MM]
+     - Action: scaffolded [ComponentName] with variants
+     - Recommended next: /create-screen
+     ```
+   - Render the handoff block with:
+     - `/create-screen` — use this component in a real screen *(recommended)*
+     - `/write-tests` — cover variant and interaction cases
+     - `/setup-theme` — make sure tokens are consistent
+     - `/add-animation` — add micro-interactions
+     - `@ui-developer` — design system expansion

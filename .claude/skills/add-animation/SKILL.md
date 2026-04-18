@@ -54,6 +54,17 @@ When this skill is invoked:
    - Respect prefers-reduced-motion / Reduce Motion setting
    - 60fps target verification
 
-5. **Suggest next steps**:
-   1. "Run `/audit-performance` to verify animation smoothness"
-   2. "Talk to `@animation-specialist` for complex animations"
+5. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /add-animation — [YYYY-MM-DD HH:MM]
+     - Action: added [type] animation to [target]
+     - Recommended next: /audit-performance
+     ```
+   - Render the handoff block with:
+     - `/audit-performance` — verify 60fps and battery impact *(recommended)*
+     - `/audit-accessibility` — ensure reduce-motion is respected
+     - `/setup-theme` — capture motion tokens in the design system
+     - `/write-tests` — cover animation state transitions
+     - `@animation-specialist` — complex choreography and gesture tuning

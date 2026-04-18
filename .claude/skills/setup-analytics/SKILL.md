@@ -43,6 +43,17 @@ When this skill is invoked:
 
 4. **Write files** to `src/analytics/` or equivalent.
 
-5. **Suggest next steps**:
-   1. "Run `/setup-crash-reporting` to add crash analytics"
-   2. "Run `/audit-security` to verify privacy compliance"
+5. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /setup-analytics — [YYYY-MM-DD HH:MM]
+     - Action: wired [provider] with [event categories] tracking
+     - Recommended next: /setup-crash-reporting
+     ```
+   - Render the handoff block with:
+     - `/setup-crash-reporting` — pair events with crash data *(recommended)*
+     - `/audit-security` — verify consent and privacy compliance
+     - `/setup-permissions` — add ATT prompt flow for iOS
+     - `/write-tests` — cover consent gating and event payloads
+     - `@analytics-specialist` — funnel and retention metrics design

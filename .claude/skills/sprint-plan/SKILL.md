@@ -43,4 +43,14 @@ When this skill is invoked:
 
 5. **Write output** to `docs/sprints/sprint-<N>.md`.
 
-6. **Suggest next steps** based on the first tasks in the sprint.
+6. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /sprint-plan — [YYYY-MM-DD HH:MM]
+     - Action: planned sprint-[N] with [X] tasks ([Y] P0/P1)
+     - Progress: 0/[X] tasks done
+     - Recommended next: [first task]
+     ```
+   - Render the handoff block. The recommended option is the highest-priority task with no dependencies — phrase it as the concrete skill (`/create-screen`, `/setup-navigation`, etc.) pointing at that task.
+   - Include alternatives: next 2–3 highest-priority tasks, plus `@mobile-architect` to review the plan.

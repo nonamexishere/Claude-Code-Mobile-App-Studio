@@ -3,7 +3,7 @@ name: design-api
 description: "Design mobile-optimized API endpoints. Considers pagination, delta sync, offline support, and mobile bandwidth constraints."
 argument-hint: "[resource-name]"
 user-invocable: true
-allowed-tools: Read, Glob, Grep, Write, AskUserQuestion
+allowed-tools: Read, Glob, Grep, Write, AskUserQuestion, Task
 ---
 
 When this skill is invoked:
@@ -43,8 +43,17 @@ When this skill is invoked:
 
 4. **Write output** to `docs/api/<resource>.md` or `docs/api/api-design.md`.
 
-5. **Suggest next steps**:
-   1. "Run `/create-endpoint <name>` to implement an endpoint"
-   2. "Run `/create-model <name>` to generate data models"
-   3. "Run `/setup-offline` to implement offline sync"
-   4. "Talk to `@api-developer` for API implementation help"
+5. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /design-api — [YYYY-MM-DD HH:MM]
+     - Action: designed [style] API contract with [sync strategy]
+     - Recommended next: /create-endpoint
+     ```
+   - Render the handoff block with:
+     - `/create-endpoint` — implement the first endpoint from the contract *(recommended)*
+     - `/create-model` — generate typed models matching API schemas
+     - `/design-database` — align schema with API resource shapes
+     - `/setup-offline` — wire mutation queue from the contract
+     - `@api-developer` — contract review and versioning strategy

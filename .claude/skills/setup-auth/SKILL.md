@@ -3,7 +3,7 @@ name: setup-auth
 description: "Set up complete authentication flow: login, signup, social auth, biometrics, token management, and protected routes."
 argument-hint: "[type: email|social|phone|biometric]"
 user-invocable: true
-allowed-tools: Read, Glob, Grep, Write, Edit, Bash, AskUserQuestion
+allowed-tools: Read, Glob, Grep, Write, Edit, Bash, AskUserQuestion, Task
 ---
 
 When this skill is invoked:
@@ -41,7 +41,17 @@ When this skill is invoked:
 
 5. **Generate files** in `src/auth/` or equivalent.
 
-6. **Suggest next steps**:
-   1. "Run `/setup-permissions` to handle permission requests post-login"
-   2. "Run `/setup-push-notifications` to register for notifications after auth"
-   3. "Talk to `@security-specialist` for security review"
+6. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /setup-auth — [YYYY-MM-DD HH:MM]
+     - Action: wired [methods] auth with [security level]
+     - Recommended next: /audit-security
+     ```
+   - Render the handoff block with:
+     - `/audit-security` — verify token storage and attack surface *(recommended)*
+     - `/setup-permissions` — handle runtime permission requests post-login
+     - `/setup-push-notifications` — register for pushes after auth
+     - `/create-form` — refine login/signup forms
+     - `@security-lead` — review biometric and token handling

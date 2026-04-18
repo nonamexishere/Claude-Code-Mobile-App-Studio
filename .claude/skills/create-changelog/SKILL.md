@@ -49,6 +49,17 @@ When this skill is invoked:
 
 5. **Write to** `CHANGELOG.md` (append to top) and `docs/release-notes/v<version>.md`.
 
-6. **Suggest next steps**:
-   1. "Run `/publish-appstore` or `/publish-playstore` with these release notes"
-   2. "Run `/build` to create release build"
+6. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /create-changelog — [YYYY-MM-DD HH:MM]
+     - Action: generated changelog + store release notes for [version]
+     - Recommended next: /build
+     ```
+   - Render the handoff block with:
+     - `/build` — cut the release artifact for this version *(recommended)*
+     - `/publish-appstore` — use "What's New" copy in App Store Connect
+     - `/publish-playstore` — use release notes in Play Console
+     - `/setup-cicd` — auto-generate changelog from CI
+     - `@tech-writer` — refine user-facing copy

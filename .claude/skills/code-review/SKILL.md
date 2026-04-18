@@ -64,4 +64,16 @@ When this skill is invoked:
 
 4. **Write report** to stdout (not a file).
 
-5. **Suggest next steps** based on findings.
+5. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /code-review — [YYYY-MM-DD HH:MM]
+     - Action: reviewed [path], found [X critical / Y warnings]
+     - Recommended next: [depends on findings]
+     ```
+   - Render the handoff block. Pick the recommended option based on findings:
+     - If critical issues: recommend fixing them now, offer `@tech-lead` for tricky ones
+     - If warnings only: recommend `/write-tests` for coverage gaps
+     - If clean: recommend next task from `/sprint-plan`
+   - Always include: `/write-tests`, `/audit-performance`, `/audit-security`, `/sprint-plan`

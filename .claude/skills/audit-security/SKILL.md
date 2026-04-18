@@ -3,7 +3,7 @@ name: audit-security
 description: "Audit mobile app security: data storage, network security, authentication, code protection, and compliance."
 argument-hint: "[area: storage|network|auth|code|all]"
 user-invocable: true
-allowed-tools: Read, Glob, Grep, Bash, Write, AskUserQuestion
+allowed-tools: Read, Glob, Grep, Bash, Write, AskUserQuestion, Task
 ---
 
 When this skill is invoked:
@@ -60,6 +60,17 @@ When this skill is invoked:
    - MEDIUM: Should fix
    - LOW: Best practice recommendation
 
-5. **Suggest next steps**:
-   1. "Talk to `@security-specialist` for remediation help"
-   2. "Run `/setup-auth` to fix authentication issues"
+5. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /audit-security — [YYYY-MM-DD HH:MM]
+     - Action: audited [area] — [N] findings (CRIT [c] / HIGH [h])
+     - Recommended next: fix CRITICAL/HIGH then /code-review
+     ```
+   - Render the handoff block with:
+     - `/code-review` — review fixes for flagged findings *(recommended)*
+     - `/setup-auth` — remediate token storage and session issues
+     - `/setup-permissions` — align runtime permissions with privacy policy
+     - `/write-tests` — add security regression tests
+     - `@security-specialist` — remediation and pen-test prep

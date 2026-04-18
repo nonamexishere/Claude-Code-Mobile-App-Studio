@@ -36,6 +36,17 @@ When this skill is invoked:
 
 4. **Write files** and update build configuration.
 
-5. **Suggest next steps**:
-   1. "Run `/setup-analytics` to combine with event analytics"
-   2. "Run `/setup-cicd` to automate symbol uploads"
+5. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /setup-crash-reporting — [YYYY-MM-DD HH:MM]
+     - Action: wired [provider] with breadcrumbs + symbol upload
+     - Recommended next: /setup-analytics
+     ```
+   - Render the handoff block with:
+     - `/setup-analytics` — pair crash data with event analytics *(recommended)*
+     - `/setup-cicd` — automate dSYM/source-map uploads in CI
+     - `/audit-performance` — add perf monitoring alongside crash reporting
+     - `/write-tests` — verify error boundary wiring
+     - `@devops-lead` — release tracking and alert routing

@@ -53,7 +53,17 @@ When this skill is invoked:
 
 5. **Generate security rules** template for Firestore/Storage.
 
-6. **Suggest next steps**:
-   1. "Run `/setup-auth` to build complete auth flows"
-   2. "Run `/setup-push-notifications` to configure push notifications"
-   3. "Talk to `@firebase-specialist` for advanced Firebase patterns"
+6. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /setup-firebase — [YYYY-MM-DD HH:MM]
+     - Action: wired Firebase [services]
+     - Recommended next: /setup-auth
+     ```
+   - Render the handoff block with:
+     - `/setup-auth` — build complete auth flows on top of Firebase Auth *(recommended)*
+     - `/setup-push-notifications` — wire FCM handlers and topic subscriptions
+     - `/design-database` — design Firestore collections and security rules
+     - `/setup-crash-reporting` — finish Crashlytics integration
+     - `@firebase-specialist` — advanced Firebase patterns and cost tuning

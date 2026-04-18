@@ -54,6 +54,17 @@ When this skill is invoked:
    - Repository interface for this model
    - Test file with serialization round-trip tests
 
-7. **Suggest next steps**:
-   1. "Run `/create-endpoint` to create API methods for this model"
-   2. "Run `/create-screen` to create a screen displaying this model"
+7. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /create-model — [YYYY-MM-DD HH:MM]
+     - Action: generated [ModelName] with serialization + repository
+     - Recommended next: /create-screen
+     ```
+   - Render the handoff block with:
+     - `/create-screen` — build a screen that displays this model *(recommended)*
+     - `/design-api` — define the API contract for this model
+     - `/setup-offline` — wire local DB + sync for this model
+     - `/write-tests` — cover serialization and validation
+     - `@database-lead` — review local schema and migrations

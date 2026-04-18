@@ -3,7 +3,7 @@ name: publish-playstore
 description: "Prepare and submit app to Google Play Store. Covers store listing, data safety section, content rating, and release tracks."
 argument-hint: ""
 user-invocable: true
-allowed-tools: Read, Glob, Grep, Write, Edit, Bash, AskUserQuestion
+allowed-tools: Read, Glob, Grep, Write, Edit, Bash, AskUserQuestion, Task
 ---
 
 When this skill is invoked:
@@ -54,6 +54,17 @@ When this skill is invoked:
    - AAB generation command
    - Upload instructions (manual or via Fastlane/gradle)
 
-5. **Suggest next steps**:
-   1. "Run `/publish-appstore` to also submit to the App Store"
-   2. "Talk to `@store-specialist` for Play Store policy questions"
+5. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /publish-playstore — [YYYY-MM-DD HH:MM]
+     - Action: generated Play Store metadata + data safety declarations
+     - Recommended next: /publish-appstore
+     ```
+   - Render the handoff block with:
+     - `/publish-appstore` — mirror submission to the App Store *(recommended)*
+     - `/create-changelog` — draft release notes per track
+     - `/setup-cicd` — automate internal-track uploads from CI
+     - `/audit-security` — final data-safety accuracy check
+     - `@store-specialist` — Play policy interpretation and rejections

@@ -47,6 +47,17 @@ When this skill is invoked:
 
 4. **Write configuration files** and route mapping.
 
-5. **Suggest next steps**:
-   1. "Run `/setup-push-notifications` to deep link from notifications"
-   2. "Talk to `@rn-navigation-specialist` for complex routing"
+5. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /setup-deep-linking — [YYYY-MM-DD HH:MM]
+     - Action: configured deep links for [types] routing [screens]
+     - Recommended next: /setup-push-notifications
+     ```
+   - Render the handoff block with:
+     - `/setup-push-notifications` — deep link from notification taps *(recommended)*
+     - `/setup-analytics` — track deep-link attribution and conversion
+     - `/write-tests` — cover route mapping and auth-gated links
+     - `/setup-navigation` — refine auth-redirect and fallback flows
+     - `@rn-navigation-specialist` — complex routing and universal-link verification

@@ -47,3 +47,18 @@ When this skill is invoked:
 3. **Execute each phase**, asking for user confirmation between phases.
 
 4. **Generate feature summary** at the end with what was built and any follow-ups.
+
+5. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /team-feature — [YYYY-MM-DD HH:MM]
+     - Action: shipped [feature] across design → data → UI → integration → QA
+     - Recommended next: /sprint-plan
+     ```
+   - Render the handoff block with:
+     - `/sprint-plan` — fold remaining follow-ups into the next sprint *(recommended)*
+     - `/code-review` — final review pass on the full feature
+     - `/write-tests` — close any coverage gaps from the QA phase
+     - `/build` — cut a build that includes the feature
+     - `@product-owner` — sign-off on scope and acceptance criteria

@@ -42,7 +42,17 @@ When this skill is invoked:
 
 6. **Write output** to `docs/features.md`.
 
-7. **Suggest next steps**:
-   1. "Run `/wireframe` to sketch screens for Must Have features"
-   2. "Run `/create-architecture` to design the technical foundation"
-   3. "Run `/sprint-plan` to break features into sprints"
+7. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /define-features — [YYYY-MM-DD HH:MM]
+     - Action: wrote docs/features.md with MoSCoW priorities
+     - Recommended next: /wireframe
+     ```
+   - Render the handoff block with:
+     - `/wireframe` — sketch screens for Must-Have features *(recommended)*
+     - `/create-architecture` — design the technical foundation
+     - `/sprint-plan` — break features into sprint tasks
+     - `/design-api` — define API contracts for the features
+     - `@product-owner` — review prioritization choices

@@ -51,7 +51,17 @@ When this skill is invoked:
 
 4. **Write files** to `src/sync/` or `src/offline/`.
 
-5. **Suggest next steps**:
-   1. "Run `/design-database` to design sync-friendly schemas"
-   2. "Talk to `@offline-specialist` for advanced sync patterns"
-   3. "Talk to `@database-specialist` for database optimization"
+5. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /setup-offline — [YYYY-MM-DD HH:MM]
+     - Action: wired [strategy] offline architecture with [sync approach]
+     - Recommended next: /design-database
+     ```
+   - Render the handoff block with:
+     - `/design-database` — design sync-friendly schemas with conflict metadata *(recommended)*
+     - `/create-model` — generate models with sync status fields
+     - `/write-tests` — cover sync, conflict, and offline flows
+     - `/audit-performance` — check sync overhead on battery and memory
+     - `@offline-specialist` — advanced sync patterns and CRDT design

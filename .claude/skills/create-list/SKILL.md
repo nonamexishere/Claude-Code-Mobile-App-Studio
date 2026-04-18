@@ -47,6 +47,17 @@ When this skill is invoked:
    - Data fetching hook / repository method
    - Test file
 
-5. **Suggest next steps**:
-   1. "Run `/create-component` for the list item design"
-   2. "Run `/audit-performance` to verify list scrolling performance"
+5. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /create-list — [YYYY-MM-DD HH:MM]
+     - Action: scaffolded [list-name] as [type] with [features]
+     - Recommended next: /audit-performance
+     ```
+   - Render the handoff block with:
+     - `/audit-performance` — verify 60fps scroll on target devices *(recommended)*
+     - `/create-component` — build a reusable list item component
+     - `/write-tests` — cover pagination and pull-to-refresh
+     - `/setup-offline` — if the list should work offline
+     - `@ux-lead` — review list UX (density, empty state)

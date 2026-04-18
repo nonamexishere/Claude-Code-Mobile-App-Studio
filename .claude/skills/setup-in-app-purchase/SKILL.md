@@ -51,6 +51,17 @@ When this skill is invoked:
    - App Store Connect: Create products, pricing, sandbox testing
    - Google Play Console: Create products, testing tracks
 
-5. **Suggest next steps**:
-   1. "Run `/publish-appstore` or `/publish-playstore` to prepare for submission"
-   2. "Talk to `@store-specialist` for store review guidelines"
+5. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /setup-in-app-purchase — [YYYY-MM-DD HH:MM]
+     - Action: wired IAP for [types] with [validation] receipt validation
+     - Recommended next: /publish-appstore
+     ```
+   - Render the handoff block with:
+     - `/publish-appstore` — configure products in App Store Connect *(recommended)*
+     - `/publish-playstore` — configure products in Play Console
+     - `/setup-analytics` — track purchase funnel and revenue events
+     - `/write-tests` — cover purchase, restore, and subscription edge cases
+     - `@store-specialist` — paywall UX and store review compliance

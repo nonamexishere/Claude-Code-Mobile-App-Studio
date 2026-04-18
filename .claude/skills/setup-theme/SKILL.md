@@ -60,7 +60,17 @@ When this skill is invoked:
 
 5. **Write files** to `src/theme/` or platform equivalent.
 
-6. **Suggest next steps**:
-   1. "Run `/create-component` to build themed components"
-   2. "Talk to `@ui-developer` for design system expansion"
-   3. "Talk to `@figma-to-mobile` to import Figma design tokens"
+6. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /setup-theme — [YYYY-MM-DD HH:MM]
+     - Action: configured design system ([style], dark=[mode])
+     - Recommended next: /create-component
+     ```
+   - Render the handoff block with:
+     - `/create-component` — build the first themed component *(recommended)*
+     - `/create-screen` — build a screen that uses the theme
+     - `/audit-accessibility` — verify contrast and dynamic type
+     - `/add-animation` — define motion tokens (duration, easing)
+     - `@ui-developer` — expand design system

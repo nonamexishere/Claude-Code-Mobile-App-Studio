@@ -53,6 +53,17 @@ When this skill is invoked:
    - Form state management (React Hook Form / Formik / flutter_form_builder)
    - Test file covering validation scenarios
 
-5. **Suggest next steps**:
-   1. "Run `/create-endpoint` for the API this form submits to"
-   2. "Run `/write-tests` to test form validation logic"
+5. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /create-form — [YYYY-MM-DD HH:MM]
+     - Action: scaffolded [form-name] with validation + keyboard handling
+     - Recommended next: /write-tests
+     ```
+   - Render the handoff block with:
+     - `/write-tests` — cover validation and submission paths *(recommended)*
+     - `/create-component` — extract reusable field components
+     - `/setup-auth` — if this is a login/signup form
+     - `/audit-accessibility` — check labels, errors, and touch targets
+     - `@ux-lead` — review form UX (labels, flow, error recovery)

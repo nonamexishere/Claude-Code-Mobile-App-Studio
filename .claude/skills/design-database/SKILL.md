@@ -3,7 +3,7 @@ name: design-database
 description: "Design the local and remote database schema. Covers SQLite, Realm, Firestore, and sync-friendly data modeling."
 argument-hint: "[entity-name]"
 user-invocable: true
-allowed-tools: Read, Glob, Grep, Write, AskUserQuestion
+allowed-tools: Read, Glob, Grep, Write, AskUserQuestion, Task
 ---
 
 When this skill is invoked:
@@ -43,7 +43,17 @@ When this skill is invoked:
 
 4. **Write output** to `docs/database-design.md`.
 
-5. **Suggest next steps**:
-   1. "Run `/create-model <entity>` to generate model classes"
-   2. "Run `/setup-offline` to implement sync logic"
-   3. "Talk to `@database-specialist` for optimization advice"
+5. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /design-database — [YYYY-MM-DD HH:MM]
+     - Action: designed local + remote schema with [sync approach]
+     - Recommended next: /create-model
+     ```
+   - Render the handoff block with:
+     - `/create-model` — generate model classes from the schema *(recommended)*
+     - `/setup-offline` — implement sync with the designed metadata
+     - `/design-api` — align API contracts with the schema
+     - `/create-endpoint` — implement CRUD for the first entity
+     - `@database-specialist` — indexing and query optimization

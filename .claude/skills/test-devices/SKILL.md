@@ -49,7 +49,17 @@ When this skill is invoked:
 
 6. **Write output** to `docs/testing/device-matrix.md`.
 
-7. **Suggest next steps**:
-   1. "Run `/write-tests` to create automated tests"
-   2. "Run `/setup-cicd` to automate testing on CI"
-   3. "Talk to `@qa-lead` for comprehensive test planning"
+7. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /test-devices — [YYYY-MM-DD HH:MM]
+     - Action: generated device matrix for [platform] at [coverage] level
+     - Recommended next: /write-tests
+     ```
+   - Render the handoff block with:
+     - `/write-tests` — cover the flows flagged by the matrix *(recommended)*
+     - `/setup-cicd` — run the device matrix on CI
+     - `/audit-performance` — profile low-end devices from the matrix
+     - `/audit-accessibility` — verify dynamic type and contrast per device
+     - `@qa-lead` — comprehensive test plan and sign-off criteria

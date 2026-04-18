@@ -3,7 +3,7 @@ name: publish-appstore
 description: "Prepare and submit app to the Apple App Store. Covers metadata, screenshots, review guidelines compliance, and submission."
 argument-hint: ""
 user-invocable: true
-allowed-tools: Read, Glob, Grep, Write, Edit, Bash, AskUserQuestion
+allowed-tools: Read, Glob, Grep, Write, Edit, Bash, AskUserQuestion, Task
 ---
 
 When this skill is invoked:
@@ -57,6 +57,17 @@ When this skill is invoked:
 
 5. **Build & Submit commands** based on platform.
 
-6. **Suggest next steps**:
-   1. "Run `/publish-playstore` to also submit to Google Play"
-   2. "Talk to `@store-specialist` for review guideline help"
+6. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /publish-appstore — [YYYY-MM-DD HH:MM]
+     - Action: generated App Store metadata + submission checklist
+     - Recommended next: /publish-playstore
+     ```
+   - Render the handoff block with:
+     - `/publish-playstore` — mirror submission to Google Play *(recommended)*
+     - `/create-changelog` — draft "What's New" release notes
+     - `/setup-cicd` — automate TestFlight uploads from CI
+     - `/audit-security` — final privacy-label accuracy check
+     - `@store-specialist` — review guideline interpretation and rejections

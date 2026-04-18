@@ -82,6 +82,17 @@ When this skill is invoked:
 
 3. **Write** `README.md` to project root.
 
-4. **Suggest next steps**:
-   1. "Add screenshots to the README"
-   2. "Run `/generate-docs` for detailed documentation"
+4. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /create-readme — [YYYY-MM-DD HH:MM]
+     - Action: wrote README.md at project root
+     - Recommended next: /generate-docs
+     ```
+   - Render the handoff block with:
+     - `/generate-docs` — expand into full API/architecture docs *(recommended)*
+     - `/create-changelog` — add CHANGELOG alongside the README
+     - `/publish-appstore` — reuse README copy for store listing
+     - `/publish-playstore` — reuse README copy for Play listing
+     - `@tech-writer` — polish tone and add screenshots

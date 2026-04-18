@@ -3,7 +3,7 @@ name: build
 description: "Build the mobile app for development, testing, or release. Handles platform-specific build configuration."
 argument-hint: "[target: dev|staging|release] [--platform ios|android|both]"
 user-invocable: true
-allowed-tools: Read, Glob, Grep, Write, Edit, Bash, AskUserQuestion
+allowed-tools: Read, Glob, Grep, Write, Edit, Bash, AskUserQuestion, Task
 ---
 
 When this skill is invoked:
@@ -50,6 +50,17 @@ When this skill is invoked:
    - Bundle/APK size report
    - Installation instructions (simulator/device)
 
-6. **Suggest next steps**:
-   1. "Run `/publish-appstore` or `/publish-playstore` for store submission"
-   2. "Run `/setup-codepush` for OTA updates"
+6. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /build — [YYYY-MM-DD HH:MM]
+     - Action: built [platform] for [target] — artifact at [path]
+     - Recommended next: /test-devices
+     ```
+   - Render the handoff block with:
+     - `/test-devices` — install and validate on the device matrix *(recommended)*
+     - `/publish-appstore` — submit the build to App Store Connect
+     - `/publish-playstore` — submit the build to Play Console
+     - `/audit-performance` — profile the release artifact
+     - `@devops-lead` — release packaging and signing issues

@@ -3,7 +3,7 @@ name: create-architecture
 description: "Design the overall mobile app architecture. Covers folder structure, state management, navigation, API layer, and offline strategy."
 argument-hint: ""
 user-invocable: true
-allowed-tools: Read, Glob, Grep, Write, Edit, AskUserQuestion
+allowed-tools: Read, Glob, Grep, Write, Edit, AskUserQuestion, Task
 ---
 
 When this skill is invoked:
@@ -52,8 +52,17 @@ When this skill is invoked:
 
 6. **Optionally scaffold** the folder structure if user confirms.
 
-7. **Suggest next steps**:
-   1. "Run `/design-api` to define your API contracts"
-   2. "Run `/design-database` to model your local data"
-   3. "Run `/setup-navigation` to implement navigation"
-   4. "Talk to `@mobile-architect` for architecture review"
+7. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+
+   - Append breadcrumb to `.claude/session/active.md`:
+     ```
+     ## /create-architecture — [YYYY-MM-DD HH:MM]
+     - Action: wrote docs/architecture.md with [pattern] pattern
+     - Recommended next: /setup-navigation
+     ```
+   - Render the handoff block with:
+     - `/setup-navigation` — wire the navigation shell implied by this architecture *(recommended)*
+     - `/setup-theme` — establish the design system before building screens
+     - `/design-api` — define API contracts
+     - `/design-database` — model local data for offline/cache needs
+     - `@mobile-architect` — challenge architecture choices
