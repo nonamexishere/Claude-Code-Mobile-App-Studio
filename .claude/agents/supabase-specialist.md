@@ -1,7 +1,7 @@
 ---
 name: supabase-specialist
 description: "Expert in Supabase: Postgres, Auth, Realtime, Edge Functions, and Storage for mobile apps. Use for Supabase setup and integration."
-tools: Read, Glob, Grep, Write, Edit, Bash, WebSearch
+tools: Read, Glob, Grep, Write, Edit, Bash, WebSearch, WebFetch
 model: sonnet
 maxTurns: 20
 ---
@@ -20,3 +20,13 @@ for apps that need a relational database with real-time capabilities.
 - **Supabase Client**: supabase-js, supabase-flutter, supabase-swift, supabase-kt
 - **Local Development**: Supabase CLI, local Postgres, migration workflow
 - **Type Generation**: Auto-generated TypeScript types from database schema
+
+### Vendor AI Resources
+
+Supabase publishes vendor-curated AI prompts — highest-quality material in this catalog:
+- `WebFetch https://supabase.com/docs/guides/getting-started/ai-prompts` — RLS, edge functions, SQL style
+- `WebFetch https://supabase.com/llms.txt` — broader docs context
+
+If the Supabase MCP is connected (`/setup-mcp supabase`), prefer it for live schema queries over guessing column names.
+
+Catalog: `.claude/docs/ai-rules.md`

@@ -221,6 +221,18 @@ The studio doesn't pre-wire any [MCP](https://modelcontextprotocol.io) servers �
 
 The full catalog with install commands and auth requirements lives in `.claude/docs/mcp-servers.md`. Most modern MCPs are hosted (OAuth) — zero secrets, just a URL. Once installed, relevant skills (`/build`, `/setup-in-app-purchase`, `/setup-crash-reporting`, etc.) automatically suggest using the MCP for live queries.
 
+## Vendor AI Rules
+
+Mobile platforms increasingly publish AI-targeted resources — `llms.txt` files, official "AI rules", or installable skill packs — that materially improve agent output. Specialists in this studio reference these when relevant:
+
+- **Expo** — vendor-authored Expo Skills (`bunx skills add expo/skills`) + `llms-full.txt`. +46% improvement on native UI tasks per Expo's evals.
+- **Flutter** — explicit AI rules at `docs.flutter.dev/ai/ai-rules`, including `rules_1k.md` for tight context budgets and topic files (BLoC, Effective Dart)
+- **Supabase** — vendor-curated AI prompts for RLS, edge functions, SQL style
+- **Firebase** — vendor-recommended approach is the MCP server, not scraping web docs
+- **RevenueCat / Stripe / Clerk / Auth0** — `llms.txt` + `.md` URL conventions
+
+The full index lives in `.claude/docs/ai-rules.md`. Specialist agents (`@expo-developer`, `@flutter-lead`, `@supabase-specialist`, etc.) automatically fetch the relevant URL via `WebFetch` before generating non-trivial code.
+
 ## Examples
 
 ### Start a new React Native app
@@ -270,7 +282,8 @@ This orchestrates multiple agents to design, build, test, and review the feature
 │   ├── quick-start.md
 │   ├── handoff-template.md  # Canonical end-of-skill format
 │   ├── review-gates.md      # Trigger matrix for director reviews
-│   └── mcp-servers.md       # Official MCP server catalog
+│   ├── mcp-servers.md       # Official MCP server catalog
+│   └── ai-rules.md          # Vendor AI rules / llms.txt index
 ├── session/              # Runtime state (auto-managed)
 │   ├── mvp.md             # One-line MVP anchor
 │   ├── active.md          # Timestamped breadcrumbs

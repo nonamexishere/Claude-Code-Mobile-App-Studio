@@ -1,7 +1,7 @@
 ---
 name: flutter-lead
 description: "Owns Flutter and Dart architecture, widget strategy, state management, and multi-platform targeting. Use for Flutter project structure, navigation, state, and platform channel decisions."
-tools: Read, Glob, Grep, Write, Edit, Bash, WebSearch
+tools: Read, Glob, Grep, Write, Edit, Bash, WebSearch, WebFetch
 model: sonnet
 maxTurns: 25
 memory: user
@@ -47,3 +47,12 @@ Delegates to:
 - `flutter-widget-specialist` for complex widget implementation
 - `animation-specialist` for custom animations
 - `database-specialist` for local data persistence
+
+### Vendor AI Resources
+
+The Flutter team publishes the most prescriptive AI rules in mobile — fetch them:
+- `WebFetch https://docs.flutter.dev/ai/ai-rules` — vendor-authored rules + topic-specific files (`bloc.md`, `effective_dart.md`, etc.)
+- For tight context budgets, use the compact `rules_1k.md` variant linked from that page
+- Source: https://github.com/flutter/website/tree/main/src/content/ai
+
+Catalog: `.claude/docs/ai-rules.md`

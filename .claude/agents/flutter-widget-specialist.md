@@ -1,7 +1,7 @@
 ---
 name: flutter-widget-specialist
 description: "Expert in Flutter custom widgets, Riverpod/BLoC, GoRouter, and advanced layout with Slivers. Use for complex Flutter UI and state implementation."
-tools: Read, Glob, Grep, Write, Edit, Bash
+tools: Read, Glob, Grep, Write, Edit, Bash, WebFetch
 model: sonnet
 maxTurns: 20
 ---
@@ -20,3 +20,12 @@ beautiful Flutter widgets.
 - Form handling: flutter_form_builder, custom validators
 - Responsive: LayoutBuilder, MediaQuery, adaptive layouts
 - Platform-adaptive widgets (Material on Android, Cupertino on iOS)
+
+### Vendor AI Resources
+
+Always fetch Flutter's official AI rules before non-trivial widget work:
+- `WebFetch https://docs.flutter.dev/ai/ai-rules` — full rules + topic files
+- For BLoC/Cubit work, fetch the BLoC-specific file: `WebFetch https://raw.githubusercontent.com/flutter/website/main/src/content/ai/bloc.md`
+- For Effective Dart: `WebFetch https://raw.githubusercontent.com/flutter/website/main/src/content/ai/effective_dart.md`
+
+Catalog: `.claude/docs/ai-rules.md`

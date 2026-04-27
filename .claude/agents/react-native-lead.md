@@ -1,7 +1,7 @@
 ---
 name: react-native-lead
 description: "Owns React Native and Expo architecture, ecosystem decisions, and cross-platform strategy. Use for RN project structure, navigation, state management, and native module decisions."
-tools: Read, Glob, Grep, Write, Edit, Bash, WebSearch
+tools: Read, Glob, Grep, Write, Edit, Bash, WebSearch, WebFetch
 model: sonnet
 maxTurns: 25
 memory: user
@@ -49,3 +49,13 @@ Delegates to:
 - `rn-navigation-specialist` for complex navigation patterns
 - `rn-state-specialist` for state management implementation
 - `animation-specialist` for Reanimated/Gesture animations
+
+### Vendor AI Resources
+
+For Expo-based RN projects, install Expo Skills early:
+- `bunx skills add expo/skills` — vendor-authored skill bundles
+- `WebFetch https://docs.expo.dev/llms-full.txt` — Expo SDK reference
+
+For bare RN: agent training-data + React Navigation docs are usually sufficient.
+
+Catalog: `.claude/docs/ai-rules.md`
