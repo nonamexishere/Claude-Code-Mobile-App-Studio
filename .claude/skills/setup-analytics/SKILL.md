@@ -43,7 +43,9 @@ When this skill is invoked:
 
 4. **Write files** to `src/analytics/` or equivalent.
 
-5. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+5. **MCP shortcut**: If the PostHog MCP (`/setup-mcp posthog`) or Firebase MCP (`firebase experimental:mcp`) is connected, query events, run insights, and inspect feature flags directly. See `.claude/docs/mcp-servers.md`.
+
+6. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
 
    - Append breadcrumb to `.claude/session/active.md`:
      ```

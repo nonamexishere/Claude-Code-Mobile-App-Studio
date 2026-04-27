@@ -51,7 +51,9 @@ When this skill is invoked:
    - App Store Connect: Create products, pricing, sandbox testing
    - Google Play Console: Create products, testing tracks
 
-5. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+5. **MCP shortcut**: If the RevenueCat MCP is connected (via `/setup-mcp revenuecat`), manage products, entitlements, offerings, and paywalls directly — no dashboard switching. See `.claude/docs/mcp-servers.md`.
+
+6. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
 
    - Append breadcrumb to `.claude/session/active.md`:
      ```

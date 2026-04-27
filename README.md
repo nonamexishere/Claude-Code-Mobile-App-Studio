@@ -167,6 +167,11 @@ Claude Code Mobile Studio is a **configuration layer** for Claude Code — a col
 | `/publish-appstore` | Prepare for App Store submission |
 | `/publish-playstore` | Prepare for Play Store submission |
 
+### Integrations
+| Skill | Description |
+|-------|-------------|
+| `/setup-mcp` | Install an officially-published MCP server (Expo, RevenueCat, Sentry, Firebase, Supabase, GitHub, etc.) |
+
 ### Team & Documentation
 | Skill | Description |
 |-------|-------------|
@@ -200,6 +205,21 @@ The studio is designed to feel like a guided game — you're never left staring 
   - `full` — directors review after every meaningful skill
 
 At phase-boundary skills, the designated director (mobile-architect, tech-lead, or product-owner) is auto-spawned to review before the handoff. See `.claude/docs/review-gates.md` for the full trigger matrix.
+
+## MCP Integration (Optional)
+
+The studio doesn't pre-wire any [MCP](https://modelcontextprotocol.io) servers — that would force Expo / Firebase / RevenueCat accounts on everyone. Instead, install only what you use:
+
+```
+/setup-mcp expo            # Expo — EAS builds, TestFlight, simulator
+/setup-mcp revenuecat      # RevenueCat — IAP, subscriptions, paywalls
+/setup-mcp sentry          # Sentry — crashes, releases, AI debugging
+/setup-mcp firebase        # Firebase — Firestore, Auth, FCM, Crashlytics
+/setup-mcp supabase        # Supabase — DB queries, Edge Functions
+/setup-mcp github          # GitHub — repos, PRs, issues, Actions
+```
+
+The full catalog with install commands and auth requirements lives in `.claude/docs/mcp-servers.md`. Most modern MCPs are hosted (OAuth) — zero secrets, just a URL. Once installed, relevant skills (`/build`, `/setup-in-app-purchase`, `/setup-crash-reporting`, etc.) automatically suggest using the MCP for live queries.
 
 ## Examples
 
@@ -249,7 +269,8 @@ This orchestrates multiple agents to design, build, test, and review the feature
 │   ├── agent-roster.md
 │   ├── quick-start.md
 │   ├── handoff-template.md  # Canonical end-of-skill format
-│   └── review-gates.md      # Trigger matrix for director reviews
+│   ├── review-gates.md      # Trigger matrix for director reviews
+│   └── mcp-servers.md       # Official MCP server catalog
 ├── session/              # Runtime state (auto-managed)
 │   ├── mvp.md             # One-line MVP anchor
 │   ├── active.md          # Timestamped breadcrumbs

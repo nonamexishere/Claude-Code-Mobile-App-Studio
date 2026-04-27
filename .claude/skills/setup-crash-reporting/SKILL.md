@@ -36,7 +36,9 @@ When this skill is invoked:
 
 4. **Write files** and update build configuration.
 
-5. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+5. **MCP shortcut**: If the Sentry MCP (`/setup-mcp sentry`) or Firebase MCP (`firebase experimental:mcp`) is connected, query crashes, releases, and breadcrumbs directly. See `.claude/docs/mcp-servers.md`.
+
+6. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
 
    - Append breadcrumb to `.claude/session/active.md`:
      ```

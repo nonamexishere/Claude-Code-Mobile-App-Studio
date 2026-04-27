@@ -59,6 +59,15 @@ mobile development agency:
 /publish-playstore
 ```
 
+### Vendor MCP Integration
+```
+/setup-mcp expo                # Expo MCP for EAS builds and TestFlight
+/setup-mcp revenuecat          # RevenueCat MCP for IAP / paywalls
+/setup-mcp sentry              # Sentry MCP for crashes and releases
+/setup-mcp firebase            # Firebase MCP (built into Firebase CLI)
+```
+Catalog: `.claude/docs/mcp-servers.md`
+
 ### Get Help
 ```
 /help

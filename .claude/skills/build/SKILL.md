@@ -50,7 +50,9 @@ When this skill is invoked:
    - Bundle/APK size report
    - Installation instructions (simulator/device)
 
-6. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
+6. **MCP shortcut (Expo)**: If the Expo MCP is connected (via `/setup-mcp expo`), trigger EAS builds, monitor build progress, and pull TestFlight crash data directly — no need to switch to the EAS web UI. See `.claude/docs/mcp-servers.md`.
+
+7. **Final step — handoff.** Follow `.claude/docs/handoff-template.md`.
 
    - Append breadcrumb to `.claude/session/active.md`:
      ```
