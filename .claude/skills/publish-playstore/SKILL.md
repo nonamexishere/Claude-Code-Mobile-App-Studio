@@ -3,6 +3,7 @@ name: publish-playstore
 description: "Prepare and submit app to Google Play Store. Covers store listing, data safety section, content rating, and release tracks."
 argument-hint: ""
 user-invocable: true
+disable-model-invocation: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Bash, AskUserQuestion, Task
 ---
 

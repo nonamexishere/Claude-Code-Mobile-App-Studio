@@ -1,6 +1,13 @@
 ---
 name: help
-description: "Shows available agents, skills, and recommended workflows. Guides users on what to do next."
+description: |
+  Shows available agents, skills, and recommended workflows. The studio's
+  guide for users learning what's possible.
+when_to_use: |
+  USE WHEN the user is lost, asks "what can I do / what commands exist /
+  where am I / I forgot what we were doing / what's next", or wants a tour
+  of agents/skills/workflows. Always preferred over generic chat answers
+  about studio capabilities.
 argument-hint: "[topic: agents|skills|workflow|all]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep

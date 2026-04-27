@@ -3,6 +3,7 @@ name: setup-codepush
 description: "Set up over-the-air (OTA) updates: EAS Update, CodePush, or Shorebird for instant updates without store review."
 argument-hint: "[provider: eas-update|codepush|shorebird]"
 user-invocable: true
+disable-model-invocation: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Bash, AskUserQuestion
 ---
 

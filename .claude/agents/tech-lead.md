@@ -4,7 +4,9 @@ description: "Oversees code quality, development practices, and team technical s
 tools: Read, Glob, Grep, Write, Edit, Bash
 model: opus
 maxTurns: 30
+effort: high
 memory: user
+color: blue
 skills: [code-review, sprint-plan]
 ---
 

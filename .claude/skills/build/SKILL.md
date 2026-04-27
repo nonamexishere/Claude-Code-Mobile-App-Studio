@@ -3,6 +3,7 @@ name: build
 description: "Build the mobile app for development, testing, or release. Handles platform-specific build configuration."
 argument-hint: "[target: dev|staging|release] [--platform ios|android|both]"
 user-invocable: true
+disable-model-invocation: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Bash, AskUserQuestion, Task
 ---
 

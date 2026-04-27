@@ -1,6 +1,14 @@
 ---
 name: brainstorm
-description: "Brainstorm a mobile app idea. Explores target audience, core features, monetization, and mobile-specific opportunities."
+description: |
+  Brainstorm a mobile app idea. Explores target audience, core features,
+  monetization, mobile-specific opportunities (offline, push, sensors), and
+  produces a structured product brief.
+when_to_use: |
+  USE WHEN the user has a vague mobile app idea but isn't sure what to
+  build first, asks "what should I make / help me think this through / I
+  have an idea but...", or wants to validate before architecture. Also use
+  when the project has no MVP anchor yet (`.claude/session/mvp.md` empty).
 argument-hint: "<app-idea>"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, AskUserQuestion, Task

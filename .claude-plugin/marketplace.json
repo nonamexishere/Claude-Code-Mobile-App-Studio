@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-marketplace.json",
+  "name": "claude-code-mobile-studio",
+  "version": "1.0.0",
+  "description": "AI-powered virtual mobile app development studio — 33 agents + 47 skills for Claude Code",
+  "owner": {
+    "name": "nonamexishere",
+    "url": "https://github.com/nonamexishere"
+  },
+  "homepage": "https://github.com/nonamexishere/Claude-Code-Mobile-App-Studio",
+  "repository": "https://github.com/nonamexishere/Claude-Code-Mobile-App-Studio",
+  "plugins": [
+    {
+      "name": "mobile-studio",
+      "source": ".",
+      "version": "1.0.0",
+      "description": "Full mobile development studio: 3-tier agent hierarchy (directors/leads/specialists) + 47 workflow skills covering planning, architecture, screens, native features, testing, and store publishing.",
+      "category": "framework",
+      "tags": ["mobile", "react-native", "expo", "flutter", "swiftui", "kotlin", "compose", "firebase", "supabase", "studio"],
+      "agents": "agents/",
+      "skills": "skills/",
+      "hooks": "hooks/",
+      "license": "MIT"
+    }
+  ]
+}

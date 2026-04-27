@@ -25,21 +25,23 @@ Claude Code Mobile Studio is a **configuration layer** for Claude Code — a col
 
 ### Installation
 
-1. Clone this repository into your project (or start a new project):
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/Claude-Code-Mobile-Studio.git my-app
-   cd my-app
-   ```
+**Option 1 — Clone**:
+```bash
+git clone https://github.com/nonamexishere/Claude-Code-Mobile-App-Studio.git my-app
+cd my-app
+claude
+```
 
-2. Start Claude Code:
-   ```bash
-   claude
-   ```
+**Option 2 — Install as a plugin (experimental)** — inside Claude Code:
+```
+/plugin marketplace add nonamexishere/Claude-Code-Mobile-App-Studio
+/plugin install mobile-studio@claude-code-mobile-studio
+```
 
-3. Run the setup wizard:
-   ```
-   /start
-   ```
+Then run the setup wizard:
+```
+/start
+```
 
 ### Quick Start
 ```
@@ -171,6 +173,13 @@ Claude Code Mobile Studio is a **configuration layer** for Claude Code — a col
 | Skill | Description |
 |-------|-------------|
 | `/setup-mcp` | Install an officially-published MCP server (Expo, RevenueCat, Sentry, Firebase, Supabase, GitHub, etc.) |
+| `/mcp-builder` | Build a custom MCP server for your own mobile backend or internal service |
+
+### Meta & Iteration
+| Skill | Description |
+|-------|-------------|
+| `/skill-creator` | Bootstrap a new skill in this studio with proper frontmatter and handoff |
+| `/refine-loop` | Iterative critic-loop pattern — runs a critic agent until output is approved |
 
 ### Team & Documentation
 | Skill | Description |
@@ -267,7 +276,7 @@ This orchestrates multiple agents to design, build, test, and review the feature
 │   ├── react-native-lead.md
 │   ├── flutter-lead.md
 │   ├── ...and 28 more
-├── skills/               # 43 workflow skills
+├── skills/               # 47 workflow skills
 │   ├── start/SKILL.md
 │   ├── brainstorm/SKILL.md
 │   ├── create-screen/SKILL.md

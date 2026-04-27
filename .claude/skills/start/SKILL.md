@@ -1,6 +1,13 @@
 ---
 name: start
-description: "Orchestration hub. Detects project state, asks where the user is, recommends the next skill, and hands off. Never auto-executes."
+description: |
+  Orchestration hub for the mobile studio. Detects project state, asks where
+  the user is, recommends the next skill, and hands off. Never auto-executes.
+when_to_use: |
+  USE WHEN the user opens this directory for the first time, asks "where do
+  I begin / what should I build first / I'm new here", says they want to
+  start a mobile app, or when context is empty and they need guidance. Also
+  use when they explicitly say `/start` or invoke any orchestration intent.
 argument-hint: "[optional-hint]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Bash, AskUserQuestion

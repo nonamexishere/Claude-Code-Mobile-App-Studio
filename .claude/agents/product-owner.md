@@ -4,8 +4,10 @@ description: "Owns product vision, feature prioritization, and user story defini
 tools: Read, Glob, Grep, Write, Edit, WebSearch, AskUserQuestion
 model: opus
 maxTurns: 25
+effort: high
 memory: user
 disallowedTools: Bash
+color: green
 skills: [brainstorm, define-features, wireframe]
 ---
 

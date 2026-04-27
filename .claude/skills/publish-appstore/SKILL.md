@@ -3,6 +3,7 @@ name: publish-appstore
 description: "Prepare and submit app to the Apple App Store. Covers metadata, screenshots, review guidelines compliance, and submission."
 argument-hint: ""
 user-invocable: true
+disable-model-invocation: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Bash, AskUserQuestion, Task
 ---
 

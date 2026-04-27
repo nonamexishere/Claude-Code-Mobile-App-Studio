@@ -4,8 +4,10 @@ description: "Highest-level technical authority for mobile projects. Defines sys
 tools: Read, Glob, Grep, Write, Edit, WebSearch
 model: opus
 maxTurns: 30
+effort: high
 memory: user
 disallowedTools: Bash
+color: purple
 skills: [create-architecture, design-api, design-database]
 ---
 

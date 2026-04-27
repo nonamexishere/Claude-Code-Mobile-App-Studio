@@ -3,6 +3,7 @@ name: setup-cicd
 description: "Set up CI/CD pipeline for mobile: EAS Build, Fastlane, Codemagic, or GitHub Actions with code signing and automated testing."
 argument-hint: "[provider: eas|fastlane|codemagic|github-actions]"
 user-invocable: true
+disable-model-invocation: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Bash, AskUserQuestion
 ---
 
